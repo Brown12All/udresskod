@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" href="images/logo.png">
+<title>Udresskod — Congolese Streetwear · Kinshasa</title>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Oswald:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080505;--fg:#f7f2eb;--red:#7a0a0a;--red2:#c21f1f;--mut:#cfc3bb;--card:#130a0a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px;background:var(--bg)}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.65 Inter,system-ui,sans-serif;overflow-x:hidden}
+#c{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+#glow{position:fixed;width:520px;height:520px;margin:-260px;border-radius:50%;background:radial-gradient(#b0141433,#0000 65%);pointer-events:none;z-index:1;left:50%;top:40%}
+#pre{position:fixed;inset:0;z-index:99;background:#080505;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity 1s,visibility 1s}
+#pre img{width:92px;animation:pu 1.6s ease-in-out infinite}
+#pre i{display:block;width:180px;height:2px;background:#3a1212;overflow:hidden}#pre i b{display:block;height:100%;width:0;background:var(--red2);animation:ld 1.7s forwards}
+#pre span{font:700 30px UnifrakturCook}
+#pre.off{opacity:0;visibility:hidden}
+@keyframes pu{50%{transform:scale(1.12);filter:drop-shadow(0 0 22px #c21f1f)}}@keyframes ld{to{width:100%}}
+header{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:12px 5vw;background:linear-gradient(#080505f2,#08050500)}
+.brand{font:700 26px UnifrakturCook,serif;color:var(--fg);text-decoration:none;display:flex;gap:10px;align-items:center}.brand img{width:26px}
+nav a{font:500 13px Oswald;letter-spacing:.15em;text-transform:uppercase;color:var(--fg);text-decoration:none;margin-left:22px}nav a:hover{color:#ff7a7a}
+section{position:relative;z-index:2;padding:110px 6vw 70px}
+.tag{font:500 13px Oswald;letter-spacing:.35em;text-transform:uppercase;color:#ff8a8a;margin-bottom:8px}
+h1{font:700 clamp(64px,13vw,150px)/.9 UnifrakturCook,serif;text-shadow:0 6px 40px #000}
+h2{font:700 clamp(42px,7vw,78px)/1 UnifrakturCook,serif;margin-bottom:28px}
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+#hero .in{max-width:620px;padding:20px 0;background:linear-gradient(90deg,#080505dd 55%,#0805);margin-left:-6vw;padding-left:6vw}
+.vision{font:500 clamp(19px,2.3vw,24px)/1.5 Inter;margin:18px 0}
+.founder{margin:20px 0 26px;padding:14px 18px;border-left:3px solid var(--red2);background:#130a0acc;max-width:500px}
+.founder b{display:block;font:600 24px Oswald;letter-spacing:.04em}.founder span{color:var(--mut);font-size:15px}
+.btn{display:inline-block;padding:14px 28px;font:600 14px Oswald;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:var(--red);border:1px solid var(--red2);text-decoration:none;cursor:pointer;transition:.3s;position:relative;overflow:hidden}
+.btn:hover{background:var(--red2);transform:translateY(-3px);box-shadow:0 10px 30px #c21f1f55}.btn.o{background:transparent}
+.rev>*{opacity:0;transform:translateY(34px);transition:1s cubic-bezier(.2,.8,.2,1)}.go .rev>*{opacity:1;transform:none}
+.rev>*:nth-child(2){transition-delay:.15s}.rev>*:nth-child(3){transition-delay:.3s}.rev>*:nth-child(4){transition-delay:.45s}.rev>*:nth-child(5){transition-delay:.6s}
+.mq{position:relative;z-index:2;overflow:hidden;background:var(--red);border-block:1px solid var(--red2);padding:14px 0;white-space:nowrap}
+.mq div{display:inline-block;animation:mq 26s linear infinite;font:500 22px Oswald;letter-spacing:.3em;text-transform:uppercase}
+@keyframes mq{to{transform:translateX(-50%)}}
+.bg{background:#080505ee}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:36px;align-items:center}
+.two img{width:100%;max-height:600px;object-fit:cover;border:1px solid #3a1818}
+.quote{font:700 30px/1.3 UnifrakturCook,serif;color:#f3d3d3;margin:20px 0}
+.bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.chip{padding:10px 20px;font:500 14px Oswald;letter-spacing:.12em;text-transform:uppercase;color:var(--fg);background:var(--card);border:1px solid #4a1f1f;cursor:pointer;transition:.25s}.chip.on,.chip:hover{background:var(--red);border-color:var(--red2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px}
+.p{background:var(--card);border:1px solid #3a1818;display:flex;flex-direction:column;transition:transform .25s,border-color .3s;opacity:0;animation:in .7s forwards}
+@keyframes in{from{opacity:0;transform:translateY(30px)}to{opacity:1}}
+.p:hover{border-color:var(--red2)}.p .im{aspect-ratio:4/5;overflow:hidden;background:#000;position:relative}
+.p img{width:100%;height:100%;object-fit:cover;transition:transform .7s}.p:hover img{transform:scale(1.08)}
+.soon{position:absolute;top:12px;left:12px;background:#fff;color:#000;font:600 12px Oswald;letter-spacing:.15em;padding:4px 10px;text-transform:uppercase}
+.pb{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.pb small{font:500 12px Oswald;letter-spacing:.25em;color:#ff8a8a;text-transform:uppercase}.pb h3{font:600 22px Oswald;text-transform:uppercase}
+.pb p{color:var(--mut);font-size:15px;line-height:1.5}.price{font:600 24px Oswald}.price.na{font-size:15px;color:var(--mut);font-weight:400}
+.sz{display:flex;gap:6px;flex-wrap:wrap}.sz button{min-width:42px;height:36px;background:none;border:1px solid #5a2a2a;color:var(--fg);font:500 13px Oswald;cursor:pointer}.sz button.on{background:#fff;color:#000}
+.pb .btn{margin-top:auto;text-align:center;width:100%}
+.lb{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;cursor:grab}
+.lb img{height:min(68vh,520px);width:auto;scroll-snap-align:center;border:1px solid #3a1818;flex:none;transition:transform .5s,filter .5s;filter:saturate(.85)}.lb img:hover{transform:scale(1.03);filter:none}
+.panel{background:#080505ee;padding:28px;border:1px solid #2c1212;max-width:660px}
+footer{position:relative;z-index:2;text-align:center;padding:30px;font-size:14px;color:var(--mut);background:var(--bg)}
+@media(max-width:700px){nav a:nth-child(n+3){display:none}section{padding-top:90px}#hero{justify-content:flex-end;padding-bottom:40px}#hero .in{background:linear-gradient(#0805,#080505ee 35%)}}
+:root[data-theme="dark"]{--bg:#080505}
+.p.hl{border-color:var(--red2);box-shadow:0 0 0 2px var(--red2),0 0 40px #c21f1f88}</style></head><body>
+<div id="pre"><img data-k="logo" alt=""><span>Udresskod</span><i><b></b></i></div>
+<canvas id="c"></canvas><div id="glow"></div>
+<header><a class="brand" href="#hero"><img src="images/logo.png" alt="">Udresskod</a>
+<nav><a href="#vision">Vision</a><a href="#boutique">Boutique</a><a href="#lookbook">Lookbook</a><a href="#contact">Contact</a></nav></header>
+
+<section id="hero"><div class="in rev"><div class="tag">Notre vision · Congolese Streetwear</div>
+<h1>Udresskod</h1>
+<p class="vision">Une marque née à Kinshasa pour inspirer la jeunesse à rêver en grand, à affirmer son identité et à croire en son potentiel. <b>Zala Yo — soyez vous.</b></p>
+<div class="founder"><b>Exaucé Ulundu</b><span>Fondateur &amp; visionnaire d'Udresskod · Kinshasa</span></div>
+<a class="btn" href="#boutique">Découvrir la boutique</a></div></section>
+
+<div class="mq"><div>Breathe great · Zala Yo · Be yourself · Made in Congo · Since MMXXIV · Nsango · Breathe great · Zala Yo · Be yourself · Made in Congo · Since MMXXIV · Nsango · </div></div>
+
+<section id="vision" class="bg"><div class="two">
+<div><div class="tag">La vision</div><h2>Plus qu'une marque</h2>
+<p>Lancée en 2024, Udresskod combine créativité, culture urbaine et foi pour offrir des vêtements qui ont du sens. Chaque pièce devient une voix, un style et un reflet de la culture kinoise : une jeunesse consciente, créative et fière de son identité.</p>
+<p class="quote">« La mode est éphémère, le style est éternel. »</p>
+<p><b>Exaucé Ulundu</b>, fondateur et visionnaire, entrepreneur et photographe (<a style="color:#ff8a8a" href="https://www.instagram.com/iamulundu" target="_blank" rel="noopener">@iamulundu</a>), porte le message <b>Nsango</b> et dirige l'univers visuel de chaque collection.</p></div>
+<img data-k="nsango" alt="Nsango"></div></section>
+
+<section id="boutique"><div class="panel" style="max-width:none;background:#080505ee"><div class="tag">Boutique</div><h2>Les collections</h2>
+<div class="bar" id="bar"></div><div class="grid" id="grid"></div>
+<p style="margin-top:22px;color:var(--mut)">Tailles S à XXL · Disponible partout à Kinshasa · Livraison à 2$ à Kinshasa.</p></div></section>
+
+<section id="lookbook" class="bg"><div class="tag">Lookbook</div><h2>Be Yourself</h2>
+<div class="lb"><img data-k="duo" alt=""><img data-k="bench1" alt=""><img data-k="street" alt=""><img data-k="moto" alt=""><img data-k="fence" alt=""><img data-k="bench2" alt=""><img data-k="grass" alt=""><img data-k="byself" alt=""></div></section>
+
+<section id="contact"><div class="panel"><div class="tag">Commander</div><h2>Rejoignez le mouvement</h2>
+<p>Choisissez votre pièce et votre taille : WhatsApp s'ouvre avec la commande déjà écrite.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px"><a class="btn" href="https://www.instagram.com/udresskod" target="_blank" rel="noopener">@udresskod</a><a class="btn o" href="https://www.instagram.com/iamulundu" target="_blank" rel="noopener">@iamulundu</a></div></div></section>
+<footer>© 2026 Udresskod · Kinshasa, RDC · Fondateur : Exaucé Ulundu <br />
+<span>Site conçu par Brown, développeur web</span>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const IM={"duo":"images/duo.jpg","bench1":"images/bench1.jpg","bench2":"images/bench2.jpg","fcback":"images/fcback.jpg","hoodg":"images/hoodg.jpg","street":"images/street.jpg","fcflat":"images/fcflat.jpg","zala":"images/zala.jpg","nsango":"images/nsango.jpg","fence":"images/fence.jpg","byself":"images/byself.jpg","moto":"images/moto.jpg","treeback":"images/treeback.jpg","grass":"images/grass.jpg","blkflat":"images/blkflat.jpg","whtflat":"images/whtflat.jpg","beanie":"images/beanie.jpg","quote":"images/quote.jpg","pull":"images/pull.jpg","logophoto":"images/logophoto.jpg","logo":"images/logo.png"}
+document.querySelectorAll('[data-k]').forEach(e=>e.src=IM[e.dataset.k]);
+/* ===== RÉGLAGES ===== */
+const WA_NUMBER="243992646547";   // numéro WhatsApp de la marque, ex : "243XXXXXXXXX"
+const CATS=["Tous","T-shirts","Pulls","Bonnets","Édition Zala Yo"];
+const S5=["S","M","L","XL","XXL"];
+/* Ajouter un produit = une ligne ici (p : "25" ou "" si prix à définir ; soon:1 = bientôt disponible) */
+const PRODUCTS=[
+{n:"Pull-over Blanc & Noir",c:"Pulls",col:"Collection Pull-over",p:"",k:"pull",d:"Pull-over à capuche, arbre Udresskod brodé côté cœur.",s:S5},
+{n:"Pull Noir Street",c:"Pulls",col:"Eleftheria",p:"",k:"hoodg",d:"Coupe ample, logo blanc sur la poitrine.",s:S5},
+{n:"T-shirt Blanc Signature",c:"T-shirts",col:"Breathe Great",p:"",k:"whtflat",d:"Le tee essentiel blanc avec l'arbre Udresskod.",s:S5},
+{n:"T-shirt Noir Signature",c:"T-shirts",col:"Breathe Great",p:"",k:"blkflat",d:"Qualité, confort et originalité à chaque pièce.",s:S5},
+{n:"T-shirt From Congo",c:"T-shirts",col:"From Congo",p:"",k:"fcflat",d:"Blanc oversize, motifs aux manches, « From Congo » au dos.",s:S5},
+{n:"T-shirt Eleftheria Brodé",c:"T-shirts",col:"Eleftheria",p:"",k:"bench2",d:"Noir ou marron, logo et motifs brodés aux manches.",s:S5},
+{n:"T-shirt Arbre — Dos",c:"T-shirts",col:"Nouveauté",p:"",k:"treeback",d:"Grand arbre Udresskod imprimé dans le dos.",s:S5,soon:1},
+{n:"Bonnet Blanc & Noir",c:"Bonnets",col:"Collection Bonnets",p:"",k:"beanie",d:"Bonnet à revers, logo arbre brodé.",s:["Unique"]},
+{n:"T-shirt Zala Yo",c:"Édition Zala Yo",col:"Eleftheria Vol. II",p:"",k:"zala",d:"Ligne exclusive : une voix visuelle pour la jeunesse qui ose.",s:S5}
+];
+const bar=document.getElementById('bar'),grid=document.getElementById('grid');let cat="Tous";
+CATS.forEach(c=>{const b=document.createElement('button');b.className='chip'+(c==cat?' on':'');b.textContent=c;b.onclick=()=>{cat=c;[...bar.children].forEach(x=>x.classList.toggle('on',x==b));draw()};bar.append(b)});
+function order(p,size){const ref='UDK-'+String(p.x+1).padStart(2,'0');
+const t=`*${p.soon?'Réservation':'Commande'} Udresskod*\n\nBonjour, je souhaite ${p.soon?'réserver':'commander'} :\n• Article : ${p.n} (Réf. ${ref})\n• Taille : ${size}\n• Prix : ${p.p?p.p+' $':'à confirmer'}\n\nMerci de me confirmer la disponibilité.`;
+return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t)}`}
+function draw(){grid.innerHTML='';PRODUCTS.map((p,x)=>(p.x=x,p)).filter(p=>cat=="Tous"||p.c==cat).forEach((p,i)=>{let size=p.s[Math.min(1,p.s.length-1)];
+const d=document.createElement('div');d.className='p';d.id='produit-'+(p.x+1);d.style.animationDelay=i*.08+'s';
+d.innerHTML=`<div class="im">${p.soon?'<div class="soon">Bientôt</div>':''}<img loading="lazy" src="${IM[p.k]}" alt="${p.n}"></div><div class="pb"><small>${p.c} · ${p.col}</small><h3>${p.n}</h3><p>${p.d}</p><div class="price${p.p?'':' na'}">${p.p?p.p+' $':'Prix à définir'}</div><div class="sz"></div><a class="btn" target="_blank" rel="noopener">${p.soon?'Réserver':'Commander'} sur WhatsApp</a></div>`;
+const z=d.querySelector('.sz');p.s.forEach(s=>{const b=document.createElement('button');b.textContent=s;b.className=s==size?'on':'';b.onclick=()=>{size=s;[...z.children].forEach(x=>x.classList.toggle('on',x==b));up()};z.append(b)});
+const A=d.querySelector('.btn'),up=()=>{A.href=order(p,size)};up();
+d.onpointermove=e=>{const r=d.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;d.style.transform=`perspective(800px) rotateY(${x*9}deg) rotateX(${-y*9}deg) translateY(-5px)`};
+d.onpointerleave=()=>d.style.transform='';grid.append(d)})}
+draw();
+/* ===== 3D ===== */
+const cv=document.getElementById('c'),R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+R.setPixelRatio(Math.min(devicePixelRatio,2));
+const S=new THREE.Scene();S.fog=new THREE.FogExp2(0x080505,.04);
+const C=new THREE.PerspectiveCamera(42,1,.1,100);C.position.set(0,.8,10.5);
+const L1=new THREE.PointLight(0xd02020,3,40);L1.position.set(-5,3,5);S.add(L1);
+const root=new THREE.Group();S.add(root);
+const ring=new THREE.Group();root.add(ring);
+const TL=new THREE.TextureLoader(),keys=['duo','bench1','street','zala','fence','bench2','hoodg','fcback'],NR=keys.length,RAD=5.2,planes=[];
+keys.forEach((k,i)=>{const tx=TL.load(IM[k]);tx.anisotropy=4;
+const m=new THREE.Mesh(new THREE.PlaneGeometry(2.7,3.5),new THREE.MeshBasicMaterial({map:tx,side:THREE.DoubleSide,transparent:true}));
+const a=i/NR*Math.PI*2;m.position.set(Math.sin(a)*RAD,Math.sin(i*1.7)*.35,Math.cos(a)*RAD);m.rotation.y=a;m.userData={a,y:m.position.y};ring.add(m);planes.push(m)});
+const logo=new THREE.Mesh(new THREE.PlaneGeometry(2.6,2.9),new THREE.MeshBasicMaterial({map:TL.load(IM.logo),transparent:true,blending:THREE.AdditiveBlending,depthWrite:false}));root.add(logo);
+const halo=new THREE.Mesh(new THREE.TorusGeometry(RAD+.8,.012,8,160),new THREE.MeshBasicMaterial({color:0xb01818}));halo.rotation.x=Math.PI/2;root.add(halo);
+const halo2=halo.clone();halo2.scale.setScalar(.7);halo2.material=new THREE.MeshBasicMaterial({color:0x5a0c0c});root.add(halo2);
+const N=900,pa=new Float32Array(N*3);for(let i=0;i<N*3;i++)pa[i]=(Math.random()-.5)*30;
+const pts=new THREE.Points(new THREE.BufferGeometry().setAttribute('position',new THREE.BufferAttribute(pa,3)),new THREE.PointsMaterial({color:0xd04040,size:.05,transparent:true,opacity:.65,depthWrite:false}));S.add(pts);
+let mx=0,my=0,sy=0,ssy=0,vel=0,last=0;
+addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;const g=document.getElementById('glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+addEventListener('scroll',()=>{sy=scrollY});
+function rs(){const w=innerWidth,h=innerHeight;R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix();root.userData.m=w<760}
+addEventListener('resize',rs);rs();
+const clk=new THREE.Clock();
+(function loop(){const t=clk.getElapsedTime(),m=root.userData.m,H=innerHeight;
+ssy+=(sy-ssy)*.07;vel+=((sy-last)*.0006-vel)*.1;last=sy;
+const p=Math.min(ssy/H,3);
+root.position.x+=((m?0:3.1)-root.position.x)*.05;root.position.y+=((m?2.2:0)-root.position.y)*.05;
+root.scale.setScalar(m?.62:1);
+ring.rotation.y=t*.12+ssy*.0028+mx*.6;
+root.rotation.x=my*.15+p*.12;
+C.position.x+=(mx*1.2-C.position.x)*.05;C.position.y+=((.8-my*.8+p*1.2)-C.position.y)*.05;C.position.z=10.5+Math.min(p,1)*2.5;C.lookAt(root.position.x*.5,root.position.y*.5,0);
+planes.forEach((q,i)=>{q.position.y=q.userData.y+Math.sin(t*.8+i)*.12;const f=Math.cos(q.userData.a+ring.rotation.y);q.material.opacity=.45+.55*(f+1)/2;q.scale.setScalar(.9+.12*f)});
+logo.position.y=Math.sin(t)*.12;logo.rotation.y=Math.sin(t*.5)*.4+mx;logo.material.opacity=.7+.3*Math.sin(t*2);
+halo.rotation.z=t*.1;halo2.rotation.z=-t*.15;pts.rotation.y=t*.02+ssy*.0005;pts.position.y=ssy*.002;
+cv.style.opacity=Math.max(.14,1-ssy/(H*.95));
+R.render(S,C);requestAnimationFrame(loop)})();
+addEventListener('load',()=>setTimeout(()=>{document.getElementById('pre').classList.add('off');document.body.classList.add('go')},1900));
+setTimeout(()=>{document.getElementById('pre').classList.add('off');document.body.classList.add('go')},4500);
+function gotoHash(){const m=location.hash.match(/^#produit-(\d+)$/);if(!m)return;cat='Tous';[...bar.children].forEach((x,i)=>x.classList.toggle('on',i==0));draw();const el=document.getElementById('produit-'+m[1]);if(el){el.classList.add('hl');setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'center'}),2400)}}
+addEventListener('hashchange',gotoHash);gotoHash();
+</script></body></html>
